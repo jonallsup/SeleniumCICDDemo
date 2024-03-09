@@ -12,7 +12,7 @@ using OpenQA.Selenium.Remote;
 namespace DotnetSelenium.Tests
 {
     [TestFixture(Author = "JAllsup", Description = "SeleniumGridTest. Passing data via TestFixture attribute via Default Constructor.")]
-    [TestFixture("admin", "password", DriverType.Firefox)]
+    [TestFixture("admin", "password", DriverType.Chrome)]
 
     public class SeleniumGridTest
     {

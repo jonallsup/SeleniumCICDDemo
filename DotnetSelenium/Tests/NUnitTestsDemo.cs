@@ -13,7 +13,7 @@ using OpenQA.Selenium.Firefox;
 namespace DotnetSelenium.Tests
 {
     [TestFixture(Author = "JAllsup", Description = "NUnit Tests Demo. Passing data via TestFixture attribute via Default Constructor.")]
-    [TestFixture("admin", "password", DriverType.Firefox)]
+    [TestFixture("admin", "password", DriverType.Chrome)]
 
     public class NUnitTestsDemo
     {
@@ -46,6 +46,11 @@ namespace DotnetSelenium.Tests
 
         private IWebDriver GetDriverType(DriverType driverType)
         {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--headless=new");
+
+
+
             // Evolution of Switch statements:
 
             // If, Else If, Else Expression:
@@ -81,7 +86,7 @@ namespace DotnetSelenium.Tests
             // Enhanced Switch Expression:
             return _driver = driverType switch
             {
-                DriverType.Chrome => new ChromeDriver(),
+                DriverType.Chrome => new ChromeDriver(chromeOptions),
                 DriverType.Firefox => new FirefoxDriver(),
                 DriverType.Edge => new EdgeDriver(),
                 _ => _driver
