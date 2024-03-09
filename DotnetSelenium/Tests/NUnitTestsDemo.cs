@@ -1,4 +1,9 @@
-﻿using AventStack.ExtentReports;
+﻿// ==========================================================================================================================================
+//
+// Source for "Selenium with C# for Beginners (.NET 8, C# 12)": https://www.udemy.com/course/selenium-dotnet-basics/
+//
+// ==========================================================================================================================================
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using DotnetSelenium.Driver;
 using DotnetSelenium.Pages;
