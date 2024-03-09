@@ -1,4 +1,9 @@
-﻿using DotnetSelenium.Driver;
+﻿// ==========================================================================================================================================
+//
+// Source for "Selenium with C# for Beginners (.NET 8, C# 12)": https://www.udemy.com/course/selenium-dotnet-basics/
+//
+// ==========================================================================================================================================
+using DotnetSelenium.Driver;
 using DotnetSelenium.Pages;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
