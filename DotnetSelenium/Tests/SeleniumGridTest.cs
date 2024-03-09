@@ -43,7 +43,7 @@ namespace DotnetSelenium.Tests
         }
 
         [Test]
-        [Category("Smoke")]
+        [Category("Unit")]
         public void TestWithPOM()
         {
 
