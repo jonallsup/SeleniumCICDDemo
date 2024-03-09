@@ -1,0 +1,83 @@
+﻿*** Notes ***
+
+Course: "Selenium with C# for Beginners (.NET 8, C# 12)": https://www.udemy.com/course/selenium-dotnet-basics/
+
+
+Section 3.13 and 3.14 (ts ~ ?:??) - Extension Method Rules:
+1.  The class needs to be a static access specifier.
+2.  The methods should also be static.
+3.  The type that is going to be extended should be called as the
+    first parameter of the method with a prefix of this keyword.
+
+
+Section 3.15 (ts ~ ?:??) - ChatGPT and Selenium IDE:
+1.  Record script to automate via Selenium IDE.
+
+2.  In Chat GPT message the following...
+    Create page object model code in Selenium C# for these locators and set the
+    class name as CreateEmployee"driver.FindElement(By.LinkText("Employee List")).Click();
+    driver.FindElement(By.LinkText("Create New")).Click();
+    driver.FindElement(By.Id("Name")).Click();
+    driver.FindElement(By.Id("Name")).SendKeys("recordeduser");
+    driver.FindElement(By.Id("Salary")).SendKeys("100000");
+    driver.FindElement(By.Id("DurationWorked")).Click();
+    driver.FindElement(By.Id("DurationWorked")).SendKeys("1000");
+    driver.FindElement(By.Id("Grade")).Click();
+    {
+        var dropdown = driver.FindElement(By.Id("Grade"));
+        dropdown.FindElement(By.XPath("//option[. = 'Senior']")).Click();
+    }
+    driver.FindElement(By.Id("Email")).Click();
+    driver.FindElement(By.Id("Email")).SendKeys("recordeduser@gmail.com");
+    driver.FindElement(By.CssSelector(".btn")).Click();
+    driver.FindElement(By.LinkText("Log off")).Click();
+
+4.  In Chat GPT update the method "CreateNewEmployee()" as follows...
+    Update the above code to get the input details as parameters for
+    the method "CreateNewEmployee()"
+
+
+Section 4.17 (ts ~ 8:55) - Run Test(s) in a Command Line Interface(CLI):
+1.  Right Click on the project from the Solution Explorer and select the "Open in Terminal" option. 
+
+2.  From command line: dotnet test --filter "Category=Smoke"
+
+
+Section 5.19 (ts ~ 5.18) - JSon file:
+1.  Make sure JSon file is accessible for test to be executable in your code.
+    a) Right click the JSon file and Select Properties.
+    b) Set the "Copy to Output Directory" to "Copy always", which copies it to the bin directory once Project is built.
+
+2. Write a private method to read the json file and parse/deserialize the data:
+    private void ReadJsonFile()
+    {
+        // Location of the bin directory - "AppDomain.CurrentDomain.BaseDirectory".
+        // Additionally the json file must reside at the base level of the Project, not in a subdirectory.
+
+        string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Login.json");
+        var jsonString = File.ReadAllText(jsonFilePath);
+    }
+
+
+Section 6 Assertions
+1. Write Assertions in test code not Page Object Model code.
+
+2. Tuples - Return 2 different elements at the same time within one single method.
+
+
+Section 7 Global Usings - Remove usings from code to add them to the "Global Usings" file.
+
+
+Section 10 Selenium Grid
+1. In Windows Console, from C:\Grid, execute batch file StartSeleniumGrid.bat: java -jar selenium-server-4.18.0.jar standalone
+2. From browser  --> localhost:4444
+
+3. To run a Hub and connect to remote node, execute the following on remote machine:
+   Execute the following of hub machine: "java -jar selenium-server-4.18.0.jar hub"
+   Execute the following of remote node machine: "java -jar selenium-server-4.18.0.jar node --hub <hub machines address i.e. "http://??.???.??.?:4444">"
+
+
+Section 11 Test Reporting - Extent
+https://www.extentreports.com/docs/versions/5/net/index.html
+
+1. "testreport.htl" is created in the "bin\Debug\net8.0" directory.
